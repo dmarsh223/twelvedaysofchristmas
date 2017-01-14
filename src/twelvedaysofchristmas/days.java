@@ -4,16 +4,6 @@ public class days {
 
     public static void main(String[] args) {
 
-        for (int i = 0 ; i < 12; i++){
-
-            System.out.printf("On the first day of Christmas \nmy true love"
-                    + "sent to me:\n");
-            twelveDays(i);
-
-        }
-    }
-    private static void twelveDays(int i){
-
 
         String[] twelve = new String[]
                 {"Partridge in a Pear Tree",
@@ -29,12 +19,42 @@ public class days {
                         "Pipers Piping",
                         "Drummers Drumming"};
 
+        String[] days = new String[]
+                {       "first", "second", "third", "fourth", "fifth", "sixth",
+                        "seventh", "eighth", "ninth", "tenth", "eleventh",
+                        "twelfth"
+                };
 
-        for (int counter = 0; counter <= i; counter++){
+        String[] number = new String[]
+                {       "a", "two", "three", "four", "five", "six", "seven",
+                        "eight", "nine", "ten", "eleven", "twelve"
 
-            System.out.println(twelve[counter]);}
+                };
 
 
+        for (int i = 0; i < 12; i++) {
+
+            System.out.printf("On the " + days[i] + " day of Christmas \nmy true love sent to me:\n");
+
+
+
+
+
+            for (int counter = i; counter >= 0; counter--) {
+
+                if (counter == 0 && i != 0){
+                    System.out.printf("and ");
+                }
+
+                System.out.printf(number[counter]+ " ");
+
+                System.out.println(twelve[counter]);
+
+
+            }
+
+            System.out.println();
+        }
     }
 
 }
